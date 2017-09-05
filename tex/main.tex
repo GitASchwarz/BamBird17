@@ -1,0 +1,90 @@
+% Dieses Dokuments muss mit XeLaTeX übersetzt werden!
+
+% Wichtige Warnungen zur Nutzung von LaTeX
+% Achtung: Muss in der ersten Zeile NOCH VOR \documentclass stehen!
+% Quelle: http://www.howtotex.com/packages/9-essential-latex-packages-everyone-should-use/
+\RequirePackage[l2tabu,orthodox]{nag}
+
+\documentclass[12pt,listtotoc]{scrartcl}
+
+% Für Schriftarten benötigt
+% Löst fontenc bzw. inputenc unter XeLaTex und LuaTeX ab
+%\usepackage{fontspec}
+% Ersatz für babel unter XeLaTeX und LuaTeX (benötigt fontspec)
+%\usepackage{polyglossia}
+% Achtung: Möglichst früh aufrufen, damit Pakete übersetzt werden!
+%\setmainlanguage[spelling=new,babelshorthands=true]{UKenglish}
+
+% Schriftart setzen
+%\setmainfont[Path=./fonts/,UprightFont=*-Regular,BoldFont=*-Bold]{SourceSerifPro}
+
+% Pakete für Farbnamen und farbige Tabellen
+\usepackage[table]{xcolor}
+
+\usepackage{titlesec}
+
+% Zum Einbinden von Grafiken
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\graphicspath{{images/}} % Pfad in geschweiften Klammern!
+
+% Einrückung und Abstand von Absätzen
+\usepackage{parskip}
+
+% Klickbare URL
+\usepackage[hidelinks]{hyperref}
+
+% Shortcuts, Menüelemente und Pfade schöner formatieren
+\usepackage{menukeys}
+
+% Mehrere Zeilen in einer Tabelle in eine Zelle integrieren
+\usepackage{multirow}
+
+% Bessere Tabellen, v.a. Zeilenumbruch
+\usepackage{ltablex}
+
+% Bessere Kontrolle über Aufzählungen (z.B. Abstände)
+\usepackage{enumitem}
+
+% Für mathematische Umgebung, Zeichen etc.
+\usepackage{amsmath}
+
+% Schönere Tabellen
+\usepackage{booktabs}
+
+\usepackage{amssymb}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%
+%\bibdata{references/references}
+
+\begin{document}
+	
+	\pagenumbering{roman}
+	\include{titlepage}
+
+	\tableofcontents
+	
+	\pagebreak
+	
+	\listoffigures
+	\pagebreak
+	\pagenumbering{arabic}
+
+	\include{chapter01/chapter01}
+	\include{chapter02/chapter02}
+	\include{chapter03/chapter03}
+	\include{chapter04/chapter04}
+	\include{chapter05/chapter05}
+	%\include{chapter06/chapter06}
+
+	\bibliography{references/references}
+	\bibliographystyle{plain}
+	
+\end{document}
