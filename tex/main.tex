@@ -18,6 +18,11 @@
 % Schriftart setzen
 %\setmainfont[Path=./fonts/,UprightFont=*-Regular,BoldFont=*-Bold]{SourceSerifPro}
 
+%German language
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
 % Pakete für Farbnamen und farbige Tabellen
 \usepackage[table]{xcolor}
 
@@ -48,6 +53,12 @@
 
 % Für mathematische Umgebung, Zeichen etc.
 \usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 
 % Schönere Tabellen
 \usepackage{booktabs}
