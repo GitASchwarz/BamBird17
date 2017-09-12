@@ -1,0 +1,15 @@
+# LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+
+# macOS
+*.DS_Store
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
