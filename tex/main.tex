@@ -54,11 +54,10 @@
 % Für mathematische Umgebung, Zeichen etc.
 \usepackage{amsmath}
 \usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
 
-\makeatletter
-\def\BState{\State\hskip-\ALG@thistlm}
-\makeatother
+\algrenewcommand{\Return}{\State \textbf{return}\ }
+\algnewcommand{\funccall}[1]{\textit{#1}}% Function call
 
 % Schönere Tabellen
 \usepackage{booktabs}
