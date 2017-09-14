@@ -6,6 +6,7 @@
 *.lof
 *.lot
 *.synctex.gz
+*.pdf
 
 # macOS
 *.DS_Store
