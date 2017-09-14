@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100 64-bit) (preloaded format=xelatex 2016.12.16)  12 SEP 2017 16:49
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9.6100 64-bit) (preloaded format=xelatex 2016.12.16)  14 SEP 2017 04:54
 entering extended mode
 **./main.tex
 (main.tex
@@ -1525,14 +1525,21 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 91.
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
+File: images/Level19.png Graphic file (type QTm)
+ <use  "images/Level19.png" >
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 102.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 96.
+(babel)             in language  on input line 102.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 102.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 102.
+ [8]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 107.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 107.
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 93.
@@ -1542,7 +1549,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 93.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 93.
- [8]
+ [9]
 \openout2 = `chapter05/chapter05.aux'.
 
  (chapter05/chapter05.tex
@@ -1559,7 +1566,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 94.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 94.
- [9
+ [10
 
 
 ]
@@ -1574,12 +1581,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 100.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
  ) 
 Here is how much of TeX's memory you used:
- 33865 strings out of 428408
- 607989 string characters out of 3160620
- 771945 words of memory out of 3000000
- 36780 multiletter control sequences out of 15000+200000
+ 33876 strings out of 428408
+ 608119 string characters out of 3160620
+ 771992 words of memory out of 3000000
+ 36790 multiletter control sequences out of 15000+200000
  20541 words of font info for 55 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  73i,8n,88p,10382b,729s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (12 pages).
+Output written on main.pdf (13 pages).

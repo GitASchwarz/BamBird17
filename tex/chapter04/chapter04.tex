@@ -90,7 +90,28 @@ Da es das Ziel von Angry Birds ist, mit wenig Vögeln alle Schweine zu vernichte
 \end{enumerate}
 \end{table}
 
-Ist die Summe der beiden Werte dann kleiner als 0.45, markieren wir diesen Schuss als \textbf{BAD} und ein anderer zufälliger Schuss aus der übergebenen Liste wird ausgeführt...\\
+Ist die Summe der beiden Werte dann kleiner als 0.45, markieren wir diesen Schuss als \textbf{BAD} und ein anderer zufälliger Schuss aus der übergebenen Liste wird ausgeführt.\\
+Um auf diese Grenze zu kommen, haben wir einige Werte miteinander verglichen und uns selber überlegt, was wir für einen guten Schuss halten würden. Zuerst haben wir den ersten Punkt -- die Punktzahl der einzelnen Schüsse -- betrachtet: Wie hoch muss die Punktzahl sein, damit der Schuss als \textbf{GOOD} bewertet wird? Dazu haben wir uns die Werte aus Level 19 generieren lassen, welche in der Tabelle \ref{lvl19} aufgelistet sind.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{Level19}
+   \caption{Level 19}
+   \label{lvl19}
+\end{figure}
 
 
-\subsection{Main Bambirds}
+Grund für Limit, beispielsszenario
+
+
+\subsection{Meta}
+Das Zusammenspiel aller oben genannten Klassen findet in der \menu{ meta > Meta}-Klasse statt, welche von der Hauptinstanz \menu{ main > Bambird} aufgerufen wird. Diese Klasse stellt die Verbindung zum tatsächlichen Spiel und dem Server dar. \\
+Ein Objekt der Klasse \texttt{Meta} wird genau einmal aufgerufen und entspricht der eigentlichen Main-Methode. Zur Veranschaulichung des Aufbaus dieser Klasse dient der Pseudocode \ref{meta}.
+
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+  \If{shotCandidate.equals(previousShot)}
+  \EndIf
+  \end{algorithmic}
+  \caption{Meta \label{meta}}
+\end{algorithm}
