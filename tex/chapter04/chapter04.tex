@@ -91,7 +91,7 @@ Da es das Ziel von Angry Birds ist, mit wenig Vögeln alle Schweine zu vernichte
 \end{table}
 
 Ist die Summe der beiden Werte dann kleiner als 0.45, markieren wir diesen Schuss als \textbf{BAD} und ein anderer zufälliger Schuss aus der übergebenen Liste wird ausgeführt.\\
-Um auf diese Grenze zu kommen, haben wir einige Werte miteinander verglichen und uns selber überlegt, was wir für einen guten Schuss halten würden. Zuerst haben wir den ersten Punkt -- die Punktzahl der einzelnen Schüsse -- betrachtet: Wie hoch muss die Punktzahl sein, damit der Schuss als \textbf{GOOD} bewertet wird? Dazu haben wir uns die Werte aus Level 19 generieren lassen, welche in der Tabelle \ref{lvl19} aufgelistet sind.
+Um auf diese Grenze zu kommen, haben wir einige Werte miteinander verglichen und uns selber überlegt, was wir für einen guten Schuss halten. Zuerst haben wir den ersten Punkt --Punktzahl der einzelnen Schüsse -- betrachtet: Wie hoch muss die Punktzahl sein, damit der Schuss als \textbf{GOOD} bewertet wird? Dazu haben wir uns die Werte aus Level 19 generieren lassen, welche in der Tabelle \ref{lvl19} aufgelistet sind.
 
 \begin{figure}[H]
   \centering
@@ -100,9 +100,19 @@ Um auf diese Grenze zu kommen, haben wir einige Werte miteinander verglichen und
    \label{lvl19}
 \end{figure}
 
+Da unserer Meinung nach alle Schüsse in diesem Level gut waren und wir den 2. Schuss noch an der Grenze zu gut sahen, stellten wir die Regel auf: der Schuss muss mind. 65\% von dem maximal zu erreichenden Durchschnittswert abdecken, um als guten Schuss zu gelten. \\
+Ebenso sind wir auch mit dem zweiten Aspekt -- Anzahl der verwendeten Vögel -- vorgegangen und haben einige Szenarien durchgespielt, z.B. war es hervorragend, wenn der Agent höchstens 3 von 4, 3-4 von 5, 4 von 6, 5 von 7, 6 von 8 etc. Vögel verwendet hat. Mit diesen Vergleichen kamen wir dann auf einen Mittelwert von 75\%, d.h. wenn der Agent maximal 75\% der Verfügung gestellten Vögel verbraucht, gilt er als gut. Somit gilt: Je kleiner dieser Prozentsatz ist, desto besser ist die Gesamtbewertung. Daher muss mit dem Wert $Wert2 = 1 - ratio$ gerechnet werden. \\
+Um diese beiden Werte dann in einem gemeinsamen Grenzwert zusammenfassen zu können, muss das Gesamtbild in Betracht gezogen werden. Abbildung \ref{evaluation} veranschaulicht alle Werte in einer Tabelle mit der Formel $0.7 * Wert1 + 0.3 * Wert2$, wobei $Wert1$ den verrechneten Wert der Punktzahl des einzelnen Schusses und $Wert2$ das Verhältnis für die Anzahl der Vögel darstellt:
 
-Grund für Limit, beispielsszenario
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{EvaluationsWerte}
+   \caption{Evaluationswerte}
+   \label{evaluation}
+\end{figure}
 
+Unsere erste Bedingung ist, dass falls $Wert1 > 0.65$ die Gesamtbewertung gut ist, auch wenn alle Vögel verwendet wurden. Dadurch folgt: $0.7 * 0.65 + 0.3 * 0 = 0.455$. \\
+Diese Grenze lässt sich auch gut auf andere Fälle anwenden, was auch anhand der Tabelle \ref{evaluation} zu sehen ist, z.B. um den betrachteten Schuss noch als \texttt{GOOD} zu markieren muss er mind. 60\% von der maximal zu erreichenden Durchschnittspunktzahl abdecken, wenn er 80\% aller Vögel verwendet hat -- $0.7 * 0.6 + 0.3 * 0.2 = 0.48$. Andernfalls gilt er als \texttt{BAD}. Im Kontrast, wenn der Agent beispielsweise bei dem Schuss nur 2 von 5 Vögeln benötigt hat, d.h. $Wert2 = 1 - 2/5 = 0.6$, muss die erreichte Punktzahl des Schusses nur 40\% betragen, um die Grenze zum guten Schuss zu überschreiten.
 
 \subsection{Meta}
 Das Zusammenspiel aller oben genannten Klassen findet in der \menu{ meta > Meta}-Klasse statt, welche von der Hauptinstanz \menu{ main > Bambird} aufgerufen wird. Diese Klasse stellt die Verbindung zum tatsächlichen Spiel und dem Server dar. \\
@@ -110,8 +120,21 @@ Ein Objekt der Klasse \texttt{Meta} wird genau einmal aufgerufen und entspricht 
 
 \begin{algorithm}[H]
   \begin{algorithmic}[1]
-  \If{shotCandidate.equals(previousShot)}
-  \EndIf
+  \Loop
+  	\If{GameState != Playing}
+  		\State choose new Level
+  	\EndIf
+  	\State take a screenshot from the scene and analyse
+  	\State generate plans
+  	\State choose one plan to be executed as a shot
+  	\State execute chosen shot
+  	\State add shot to the shot-list of the current level
+  	\If{GameState == WON or GameState == LOST} \\
+  		\hspace{2.5em} add level to database
+  	\EndIf
+  \EndLoop
   \end{algorithmic}
   \caption{Meta \label{meta}}
 \end{algorithm}
+
+Die Schleife läuft ständig bis das Spiel zu Ende ist. Es wird ein Level ausgewählt und jeder ausgeführte Schuss wird in dem Level gespeichert und der nächste Schuss wird ausgeführt. Nach jedem vollendeten Level wird es dann in die Datenbank gespeichert und die Schleife beginnt von vorne, wobei es diesem Fall in die erste If-Schleife kommt und ein neues Level auswählt.
