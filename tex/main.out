@@ -1,14 +1,17 @@
-\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
-\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.3}{Background}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{}{section.3}% 4
-\BOOKMARK [1][-]{section.4}{Key\040Results}{}% 5
-\BOOKMARK [2][-]{subsection.4.1}{Level\040und\040Datenbank}{section.4}% 6
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Level}{subsection.4.1}% 7
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Datenbank}{subsection.4.1}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Level\040Selection}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{Shot\040Selection}{section.4}% 10
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Verhindern von Wiederholen von Schüssen}{subsection.4.3}% 11
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Schussevaluation}{subsection.4.3}% 12
-\BOOKMARK [2][-]{subsection.4.4}{Main\040Bambirds}{section.4}% 13
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 14
+\BOOKMARK [1][-]{section.1}{Zusammenfassung}{}% 1
+\BOOKMARK [1][-]{section.2}{Einf\374hrung}{}% 2
+\BOOKMARK [1][-]{section.3}{Hintergrund und Verwandte Arbeiten}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Angry Birds als Herausforderung im Bereich K\374nstliche Intelligenz}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Verwandte Arbeiten}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Der IJCAI 2017 Angry Birds AI Wettbewerb}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Meta-Strategie des Agenten "BamBird"2017}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Key Results}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Level und Datenbank}{section.4}% 9
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Level}{subsection.4.1}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Datenbank}{subsection.4.1}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Level Selection}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Shot Selection}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Verhindern von Wiederholen von Sch\374ssen}{subsection.4.3}% 14
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Schussevaluation}{subsection.4.3}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Main Bambirds}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17
