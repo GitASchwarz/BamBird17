@@ -81,6 +81,8 @@ Zur Veranschaulichung, wie der Algorithmus implementiert werden soll, dient der 
   \caption{Level selection after every level was played at least once \label{lvlSelec}}
 \end{algorithm}
 
+Um ebenso zu verhindern, dass nicht das selbe Level immer und immer wieder ausgewählt wird, haben wir eine Klausel implementiert, sodass -- nachdem alle verlorenen Level durchgespielt wurden -- ein Level nur ausgewählt werden kann, wenn die Differenz zwischen seiner Spielanzahl und der minimalen Anzahl, wie oft ein Level schon gespielt wurde, nicht 2 übersteigt. D.h. wenn das ausgewählte Level zum 5. Mal ausgewählt werden soll, ein anderes Level aber erst 2-mal gespielt wurde, wird das Level mit der zweithöchsten Wahrscheinlichkeit ausgewählt.
+
 \subsection{Shot Selection} \label{ShotSelection}
 Um bei wiederholten Versuchen von Level nicht ständig dieselben Schüsse zu nehmen und unsere Spieltaktik zu verbessern, kommt nun die Schussauswahl ins Spiel. Dafür bekommt unsere Klasse \texttt{ShotSelection}, die sich ebenfalls im \texttt{Meta}-Ordner befindet, von der Strategie-Gruppe für jeden Vogel eine Liste von Zielobjekten (\texttt{Targets}), auf die der Vogel schie\ss en soll (siehe Methode \texttt{chooseShotWithOneList}). Eines davon wandeln wir dann in ein \texttt{Shot}-Objekt um und der Agent kann den Schuss dann im Spiel ausführen. Nachdem ein Schuss getätigt wurde, wird dieser dann für das entsprechende Level in eine Liste von Schüssen gespeichert (vgl. Kapitel \ref{Level}). \\
 Zu den jeweiligen \texttt{Targets} wird eine Konfidenz zwischen 0 und 1 von der Strategie-Gruppe mitübergeben, nach welcher der auszuführenden Schuss ausgewählt wird. 
