@@ -1,7 +1,22 @@
-\section{Conclusion}
-- Wettbewerb \\
-- Was besser gemacht werden kann: \\
-	- Alle Schüsse speichern \\
-	- LevelState verwenden
-	- Vergleich mit der alten Gruppe?
-	- Derzeit nur Vergleich von den gleichen Level, evtl möglich die Gebäude von allen Level auf Ähnlichkeiten zu vergleichen und dementsprechend Schüsse auszuwählen
+\section{Konklusion}
+
+\subsection{Wettbewerb}
+Der Wettbewerb fand am 24.8.2017 statt, wobei wir dieses Jahr den Titel leider nicht verteidigen konnten. Das Problem lag daran, dass wir an einem Level hängen geblieben sind und uns das soviel Zeit gekostet hat, dass wir nicht mehr in der Lage waren dies aufzuholen. \footnote{\url{https://aibirds.org/angry-birds-ai-competition/competition-results.html} (zuletzt abgerufen: 13.09.2017)} Ob damit gemeint war, dass keine passende Strategie gefunden wurde oder ob es immer wieder das gleiche Level ausgewählt hat, konnten wir leider nicht in Erfahrung bringen.
+
+\subsection{Vergleich zu letztem Jahr}
+Der signifikanteste Unterschied zwischen unserer Vorgehensweise und der aus dem letzten Jahr ist die Verwendung der Datenbank. Während das Team 2016 keinen Speicher verwendet hat und ihre Taktik auf Zufall basierte, bauen unsere Ideen zur Verbesserung und zum Lernen der Spieltaktik auf der Level-Storage auf. Dementsprechend fehlte dem Team aus letztem Jahr auch eine Schussauswahl. \\
+Am meisten ähnelt sich jedoch die Levelauswahl, wobei wir ihre Idee für die Grenze, die wir für die Anzahl an Wiederholungsversuchen zulassen, auch in unseren Gedankengängen in Betracht gezogen haben (siehe Kapitel 8.3 - \glqq A case study on the level selection functionality\grqq aus dem Projektbericht 2016). Wir haben ihre Ideen sozusagen erweitert.
+
+\subsection{Verbesserungsmöglichkeiten}
+\subsubsection{Datenbank}
+Derzeit verwendet die \texttt{LevelStorage} eine Map und eine separate Liste, die die Level-IDs umfasst. Es wäre übersichtlicher eine einzige Liste oder Map zu haben und diese als Einheit zu verwenden. \\
+Au\ss erdem könnte der Speicher erweitert werden. Was auf jeden Fall verbessert werden muss, ist dass es mehrere Listen bzw. eine gro\ss e Liste von allen Schüssen geben muss. In der jetzigen Implementierung wird die Schussliste eines Levels nach dem Wiederholen desselben Levels lediglich überschrieben, d.h. man verliert die Information der Schüsse aus dem ersten Durchgang. \\
+Zusätzlich können noch andere Merkmale gespeichert werden, abhängig von den anderen Gruppen, z.B. Ergebnisse der Physiksimulation. Eine sinnvolle Idee wäre es auch, komplette Levelszenen zu speichern, also die Strukturen und ihre Reihenfolge, Anzahl der Vögel und Anzahl der Schweine. Somit können die einzelnen Level genauer analysiert und evaluiert werden.
+\subsubsection{Levelauswahl}
+Bei der Levelauswahl könnte man eine andere Formel finden, um die Wahrscheinlichkeit für ein Level zu berechnen, sowie andere Komponenten mit einbeziehen. Ebenfalls können andere Grenzen gesetzt werden, wie oft ein Level gespielt werden darf und die Reihenfolge nicht nur abhängig von der erreichten Punktzahl machen, sondern auch auf die verbliebene Zeit und das Ausma\ss  des Levelumfangs, sodass man ab einer bestimmten Zeit beispielsweise nur noch kleinere Level spielt, um noch so viele Level spielen zu können wie möglich.
+\subsubsection{Schussauswahl und Evaluation}
+Für die Schussauswahl könnte das Meta-Team, falls die Physiksimulation hinzukommt, eigene Konfidenzen für die übergebenen Pläne errechnen, anstatt sich allein auf das Strategie-Team zu verlassen.  \\
+Derzeit erfolgt die Schussevaluation so, dass wir nur Schüsse vergleichen, die im selben Level an der gleichen Stelle ausgewählt werden und der erste Durchgang aller Level erfolgt somit ohne Evaluation. Man könnte einen Weg finden über die Level hinaus Schüsse zu vergleichen. Ein Ansatz wäre die Erweiterung der Datenbank um das Speichern von ganzen Welten. Dadurch können die Schüsse bereits beim ersten Durchgang verglichen werden, z.B. besitzt Level 1 eine ähnliche Struktur wie Level 4, könnte man sich den Schuss auf diese Struktur aus Level 1 zur Hilfe für Level 4 nehmen. 
+
+\subsection{Fazit}
+Alles in Einem sind wir der Meinung, dass der Agent trotz des Versagens im Wettbewerb gelungen ist und nach der Umstrukturierung eine gute Basis zu einem hervorragenden Agenten besitzt. Beim nächsten Mal kann der Fokus mehr auf maschinelles Lernen und tiefer gehende Aspekte eingegangen werden.
